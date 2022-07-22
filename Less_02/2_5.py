@@ -7,7 +7,13 @@ while q !='q':
     for el in range(len(my_list)):
      if q !='q':
         i = int(input("Введите число"))
-        my_list.insert(el + 1, i)
+        my_list.sort()
+        if my_list[-1] < i:
+            my_list.append(i)
+        elif my_list[0] >= i:
+            my_list.insert(0, i)
+        else:
+            my_list.insert(el + 1, i)
         my_list.sort()
         print(my_list[::-1])
      elif q == "q":
